@@ -1,0 +1,10 @@
+### Get aggregate by ID
+GET http://localhost:8081/api/command/123
+
+### Post new command
+POST http://localhost:8081/api/command
+Content-Type: application/json
+
+{ "data" : "data"}
+
+

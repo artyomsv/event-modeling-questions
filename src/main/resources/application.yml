@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: demo
+  devtools:
+    restart:
+      enabled: true
+  jackson:
+    serialization:
+      indent-output: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:25432/postgres
+    username: postgres
+    password: postgres
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+
+server:
+  port: 8081
+  forward-headers-strategy: native
+
+essentials:
+  durable-queues:
+    max-polling-interval: 2s
+    polling-delay-interval-increment-factor: 0.5
+    shared-queue-table-name: durable_queues
+    transactional-mode: singleoperationtransaction
+    verbose-tracing: false
+  event-store:
+    identifier-column-type: text
+    json-column-type: jsonb
+    subscription-manager:
+      event-store-polling-batch-size: 5
+      event-store-polling-interval: 200
+      snapshot-resume-points-every: 2s
+    use-event-stream-gap-handler: true
+  fenced-lock-manager:
+    fenced-locks-table-name: fenced_locks
+    lock-confirmation-interval: 5s
+    lock-time-out: 12s
+  immutable-jackson-module-enabled: true
+
