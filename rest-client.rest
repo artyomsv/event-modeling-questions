@@ -1,5 +1,5 @@
 ### Get aggregate by ID
-GET http://localhost:8081/api/command/123
+GET http://localhost:8081/api/command/783dc1e2-5e0e-467e-9c37-f1951e66bff3
 
 ### Post new command
 POST http://localhost:8081/api/command
